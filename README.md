@@ -1,3 +1,3 @@
-# todo-list-demo
+branch init
 
-使用了本地存储方案, 没有对存储方案有过多的设计
+vite 框架 + tailwindCSS 样式方案, daisyUI 样式库;
