@@ -9,7 +9,7 @@ export default function RadioField(
   return (
     <span
       {...props}
-      className="mr-4 btn btn-sm btn-square btn-outline btn-ghost font-medium text-base text-rose-600 bg-pink-100"
+      className="mr-4 btn btn-sm btn-square btn-outline btn-secondary font-medium text-base text-rose-600 bg-pink-100"
     >
       {props.children}
     </span>
