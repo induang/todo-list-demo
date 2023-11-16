@@ -25,6 +25,7 @@ export default function TodoItem({
     <div
       className={clsx(
         "dw-todo-item bg-white w-full rounded shadow-md px-8 py-6 my-8 relative",
+        "flex flex-col gap-3",
         isFocus && "expand"
       )}
       draggable

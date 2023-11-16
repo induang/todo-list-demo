@@ -1,5 +1,4 @@
 import InputField from "../../controls/InputField";
-import RadioField from "../../controls/RadioField";
 import BasicModel from "../../modal/BasicModel";
 import AddItemModalOpener from "./AddItemModalOpener";
 import MultiLineInputField from "../../controls/MultiLineInputField";
@@ -8,11 +7,14 @@ import DoneIcon from "../../../assets/doneIcon.png";
 import useTodosData from "../../../hooks/useTodosData";
 import { useState } from "react";
 import { TodoModel } from "../../../types";
+import RadioGroup from "../../controls/RadioGroup";
 
 export default function AddItemModal() {
   const { todos, setTodos } = useTodosData();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [tag, setTag] = useState("");
+  const [level, setLevel] = useState(0);
   const handleCloseClick = () => {
     window.history.go(0);
   };
@@ -21,7 +23,14 @@ export default function AddItemModal() {
       id: window.crypto.randomUUID(),
       title,
       content,
-      tags: [],
+      tags: [
+        { id: window.crypto.randomUUID(), text: `P${level}`, level },
+        {
+          id: window.crypto.randomUUID(),
+          text: tag,
+          level: 0,
+        },
+      ],
     };
     if (todos?.length) {
       setTodos([newTodo, ...todos]);
@@ -45,12 +54,14 @@ export default function AddItemModal() {
           value={content}
           onChange={(e) => setContent(e.target.value)}
         />
-        <InputField aria-label="tags" placeholder="Tag" />
+        <InputField
+          aria-label="tags"
+          placeholder="Tag"
+          value={tag}
+          onChange={(e) => setTag(e.target.value)}
+        />
         <div className="mt-4">
-          <RadioField>1</RadioField>
-          <RadioField>2</RadioField>
-          <RadioField>3</RadioField>
-          <RadioField>4</RadioField>
+          <RadioGroup aria-label="level" value={level} setValue={setLevel} />
         </div>
         <div className="text-center">
           <img
