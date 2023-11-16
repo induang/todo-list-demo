@@ -1,0 +1,24 @@
+.dw-todo-item {
+  transition: transform 0.5s;
+  min-width: 250px;
+  min-height: 170px;
+}
+
+.dw-todo-item.expand {
+  transform: scale(1.1);
+  height: fit-content;
+}
+
+.dw-todo-item-content {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.dw-todo-item-content.expand {
+  overflow: visible;
+  -webkit-line-clamp: unset;
+}
+aside {
+  transform: translate(0, -50%);
+}
