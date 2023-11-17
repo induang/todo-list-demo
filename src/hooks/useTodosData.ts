@@ -14,7 +14,8 @@ const defaultTodos: Array<TodoModel> = [
   {
     id: "610f3d83-fa95-4856-a90e-b415738d28bf",
     title: "适配了一点移动端和web端",
-    content: "在移动端需要点击显示更多内容, 在web端悬浮显示更多内容",
+    content:
+      "在移动端需要点击显示更多内容,点击删除, 在web端悬浮显示更多内容,拖动删除;时间关系,两端都没有 done 逻辑",
     tags: [
       { id: "833ee7ec-8d4c-46db-9e22-db09aad0a588", text: "P1", level: 1 },
       { id: "2e0cd6d0-1971-4332-a850-39ebe069f89b", text: "教程", level: 0 },
