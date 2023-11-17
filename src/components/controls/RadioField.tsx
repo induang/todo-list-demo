@@ -25,7 +25,7 @@ export default function RadioField(
       className={clsx(
         "inline-block w-9 h-9 mr-4 rounded-sm text-center font-medium text-base leading-9",
         props.checked
-          ? "text-rose-600 bg-pink-100"
+          ? "text-rose-600 bg-pink-100 border border-pink-100"
           : "text-gray-400 bg-white border border-gray-100"
       )}
       onClick={() => {

@@ -8,16 +8,19 @@ import useTodosData from "../../../hooks/useTodosData";
 import { useState } from "react";
 import { TodoModel } from "../../../types";
 import RadioGroup from "../../controls/RadioGroup";
+import AddItemModalActions from "./AddItemModalActions";
 
 export default function AddItemModal() {
-  const { todos, setTodos } = useTodosData();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [tag, setTag] = useState("");
   const [level, setLevel] = useState(0);
+  const { todos, setTodos } = useTodosData();
+
   const handleCloseClick = () => {
     window.history.go(0);
   };
+
   const handleAddTodoClick = () => {
     const newTodo: TodoModel = {
       id: window.crypto.randomUUID(),
@@ -40,8 +43,8 @@ export default function AddItemModal() {
     window.history.go(0);
   };
   return (
-    <BasicModel opener={AddItemModalOpener()}>
-      <div className="dw-add-item-form w-full sm:w-125 bg-white text-left p-10 flex flex-col gap-3">
+    <BasicModel opener={AddItemModalOpener()} actions={AddItemModalActions()}>
+      <div className="dw-add-item-form w-full sm:w-125 bg-white text-left p-10 flex flex-col gap-3 z-10">
         <InputField
           aria-label="title"
           placeholder="take dog out on wolk"

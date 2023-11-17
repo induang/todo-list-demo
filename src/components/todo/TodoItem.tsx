@@ -36,15 +36,17 @@ export default function TodoItem({
       <header className="text-gray-700 text-2xl font-extrabold">
         {todo.title}
       </header>
-      <article
-        className={clsx(
-          "dw-todo-item-content",
-          "text-gray-500 text-medium",
-          isFocus && "expand"
-        )}
-      >
-        {todo.content}
-      </article>
+      {todo.content && (
+        <article
+          className={clsx(
+            "dw-todo-item-content",
+            "text-gray-500 text-medium",
+            isFocus && "expand"
+          )}
+        >
+          {todo.content}
+        </article>
+      )}
       <div>
         {todo.tags?.map((tag) => (
           <Tag key={tag.id} tag={tag} />

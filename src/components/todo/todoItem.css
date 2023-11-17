@@ -1,7 +1,6 @@
 .dw-todo-item {
   transition: transform 0.5s;
   min-width: 250px;
-  min-height: 170px;
 }
 
 .dw-todo-item.expand {
