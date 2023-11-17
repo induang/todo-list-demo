@@ -2,8 +2,8 @@
 
 import CloseIcon from "../../../assets/closeIcon.png";
 import DoneIcon from "../../../assets/doneIcon.png";
-import useTodosData from "../../../hooks/useTodosData";
-import { TodoModel } from "../../../types";
+// import useTodosData from "../../../hooks/useTodosData";
+// import { TodoModel } from "../../../types";
 
 export default function AddItemModalActions() {
   const handleCloseClick = () => {
